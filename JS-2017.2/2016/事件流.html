@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件冒泡-事件捕获</title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*cursor: move;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="div1" onclick="add()"></div>   <!--//HTML事件处理程序-->
+		<script>
+			function add(){
+				alert('123');
+			}
+			var oDiv = document.getElementById("div1");
+		DOM0级事件处理程序
+			oDiv.onclick =function  () {        //DOM0级事件处理程序
+				oDiv.style.backgroundColor = '#6495ED';
+				oDiv.style.cursor = 'move';
+			}
+			oDiv.onclick = null;   				//清除DOM0级事件处理程序
+		DOM2级事件处理:
+			addEventListener('click',add,false);  
+			removeEventListener('click',add,false);
+			通过addEventListener添加的事件只能用removeEventListener来删除
+
+		IE6 7 8 事件处理：
+			attachEvent(“事件名”,”事件处理函数”)
+			detachEvent(“事件名”,”事件处理函数”)
+
+			attachEvent('onclick',add);
+			detachEvent('onclick',add);
+			
+			addEventListener('click',function(){},false);
+			removeEventListener('click',function(){},false);//无效
+		</script>
+	</body>
+</html>

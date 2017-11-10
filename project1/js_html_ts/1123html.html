@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html style="font-size: 200px;">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(ev){
+				var oDiv1=document.getElementById("div1");
+				oDiv1.onmousedown = function(ev){
+					var ev = ev || window.event;
+					var disX = ev.clientX
+					alert(ev.which)
+				}
+				document.onkeydown = function(ev){
+					var ev = ev || window.event;
+					if(ctrlKey||shiftKey){
+						alert(ev.keyCode);
+					}
+					
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

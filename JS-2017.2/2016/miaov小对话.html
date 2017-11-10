@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div {
+				width: 260px;
+				height: 300px;
+			}
+			#div1 {
+				width: 240px;
+				height: 200px;
+				border: 1px solid #ccc;
+				background-color: #f1f1f1;
+			}
+			#p1 {
+				text-align: right;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				var oDiv = document.getElementById("div1");
+				var oSpan = document.getElementById("span");
+				var oText = document.getElementById("text");
+				var oBtn = document.getElementById("btn");
+				oBtn.onclick = function () {
+					if (oSpan.innerHTML == "嘻嘻：") {
+						oDiv.innerHTML += oSpan.innerHTML + oText.value+'<br>';
+						oText.value = '';	
+						oSpan.innerHTML = "哈哈：";
+					}else {
+						var newText = document.createElement('p');
+						newText.innerHTML = oText.value + "：哈哈";
+						newText.style.textAlign = 'right';
+						oDiv.appendChild(newText);
+						oText.value = '';	
+						oSpan.innerHTML = "嘻嘻：";
+					}
+				}				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div">
+			<div id="div1"></div>
+			<p id="span">嘻嘻：</p>
+			<input type="text" id="text"/>
+			<input type="button" name="" id="btn" value="提交" />
+			
+		</div>
+		
+	</body>
+</html>

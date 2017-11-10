@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三级数据绑定</title>
+	</head>
+	<body>
+		<select name="" id="select1">
+			
+		</select>
+		<select name="" id="select2">
+			
+		</select>
+		
+		<div id="sheng"></div>
+		<div id="qu"> </div>
+		<script type="text/javascript">
+//		20161201未完待续……
+			var arr1 = ['北京市','河北省','上海市'];	
+			var arr2 = [ ['海淀区','朝阳区','丰台区'],['石家庄','唐山','保定'],['东方明珠','黄埔','陆家嘴'] ]
+			
+			var oSelect1 = document.getElementById("select1");
+			var oSelect2 = document.getElementById("select2");
+//			var aOption1 = oSelect1.getElementsByTagName('option');
+			
+			
+			for( var i=0;i<arr1.length;i++ ){
+				
+				var doc = document;
+				var Option1 = doc.createElement("option");
+				oSelect1.appendChild(Option1);
+				Option1.innerHTML = arr1[i];
+				Option1.setAttribute('value',i)
+				var k = oSelect1.onchange ;
+					oSelect1.onchange = function(){
+						return this.value
+					}
+					
+					
+				for(var j=0;j<arr1[0];j++){
+				
+					var Option2 = doc.createElement("option");
+					oSelect2.appendChild(Option2);
+					Option2.innerHTML = arr2[0][j];
+					console.log(i+''+j)
+						
+				}
+				
+			}
+			
+			
+			
+		
+				
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

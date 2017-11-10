@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul {
+				color: red;
+			}
+			.li1,span {
+				color: black;
+			}
+			.div1 span {
+				color: blue;
+			}
+			.div1 > span{
+				color: #ccc;
+			}
+			.div1 > span + div {
+				color: goldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="li1">家用电器11</li>
+			<li >家用电器22</li>
+			<li class="li1">家用电器33</li>
+			<li>家用电器44</li>
+			<li class="li1">家用电器55</li>
+			<li>家用电器66</li>
+			<li>家用电器77</li>
+			<li>家用电器88</li>
+			<li>家用电器99</li>
+		</ul>
+		<span>span1</span>
+		
+		<div class="div1">
+			<span>div span1</span>
+			<div>
+				qwe
+				<span>div span2</span>
+			</div>
+			<div>
+				qwe
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>一个组件就是一个*.vue文件</title>
+	</head>
+	<body>
+		<div id="app">
+		  {{ message }}
+		</div>
+		<p v-text="message"></p>
+		<p v-html="message"></p>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script>
+			vue组件的重要选项也就是参数 data methods watch
+			data中的数据可以显示到页面中，也可以用this获取到。也可以在methods中用this获取。watch监听数据data
+			
+			var app = new Vue({
+			  el: '#app', //element
+			  data: {
+			    message: 'Hello Vue!'
+			  }
+			})
+			模板指令 - html和vue对象的粘合剂。写在html中
+		</script>
+	</body>
+</html>

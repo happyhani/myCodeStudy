@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p class="p1">中国</p>
+	        <p class="p2">澳门</p>
+	        <p class="p2">台湾</p>
+	        <p class="p2">香港</p>
+    	</div>
+		<script>
+			
+			var div= document.getElementById('div1');
+		    var p= div.querySelectorAll('.p2');//
+		    var aP= div.getElementsByTagName('p');
+		    
+		    console.log(p);
+			console.log(div.nodeName);//DIV
+			console.log(div.nodeType);//1
+			console.log(div.nodeValue);//null
+			console.log(document.nodeType);//9
+			console.log(div.attributes[0].nodeName);//id
+			console.log(div.childNodes);//[text, p.p1, text, p.p2, text, p.p2, text, p.p2, text]
+			console.log(div.firstChild);//#text 空格也算
+			console.log(div.parentNode);//<body></body>
+			var span = document.createTextNode('text');
+
+			var a = document.createElement('a');
+				a.innerHTML = '超链接';
+				a.appendChild(span);
+			div.insertBefore(a,aP[0]);
+			var img = new Image();
+			img.src = 'img/1.jpg';
+			div.appendChild(img);
+			document.body.appendChild( div.cloneNode(true) );
+			
+		</script>
+	</body>
+</html>

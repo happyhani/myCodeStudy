@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				//祖先   向上遍历
+//				$("#div1").parent().css({"background-color":"red","color":"#fff"});
+//				$("#div1").parents("ul").css({"background-color":"red"});
+//				$("#div1").parentsUntil("div").css({"background-color":"red"});
+				//后代   向下遍历
+				//$("ul").children().css("background-color","#6495ED");//被选元素的所有直接子元素
+//				$("ul").find("div").css("background-color","#6495ED");//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("ul").find("*").css("background-color","#6495ED");//被选元素的后代元素，一路向下直到最后一个后代。	
+				
+				//同胞   水平遍历
+//				$("ul").siblings().css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("p").next().css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("p").prev().css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("a").nextAll().css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("a").nextUntil("p").css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("ul").prevAll().css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+//				$("ul").prevUntil("p").css({"background-color":"#6495ED","border":"2px solid red"});//被选元素的后代元素，一路向下直到最后一个后代。	
+				var a="1";
+				$("ul").append("<li>app</li>")
+				$('ul').delegate("li","click",a,function(){
+					alert(a);
+				})
+				
+			})
+		
+		</script>
+	</head>
+	<body>
+		<div>
+			<a href="#">链接</a>
+			<p>qwewrewrwe</p>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				
+				<li><div id="div1">123</div></li>
+			</ul>
+		</div>	
+	</body>
+</html>

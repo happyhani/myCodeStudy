@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			for (var key in window) {
+//				console.log(key+'：'+window[key]);
+//			}
+//			console.log(window.navigator.userAgent);  //浏览器信息
+//			console.log(window.screen);  // 屏幕信息
+//			console.log(window.history);  
+//			console.log(window.location);
+//			console.log(location.href); //路径url  http://127.0.0.1:8020/JS/BOM.html
+//			console.log(location.search); //url？后面的值
+//			console.log(location.hash); //url#后边的值
+			console.log(window.innerHeight); //返回窗口的文档显示区的高度
+			console.log(window.innerWidth);//返回窗口的文档显示区的宽度
+			//document.onclick = function (ev) {
+////				alert(document.documentElement.offsetHeight); //文档高度
+////				alert(document.body.offsetHeight); 
+////				alert(document.body.scrollHeight);//内容高度Height (in pixels) of the total content area of the element.
+//				alert(document.body.scrollTop);  //chrome 1499
+//				alert(document.documentElement.scrollTop); //chrome 0  ff ie	
+				
+			//}
+			
+			window.alert('alert弹窗');
+			confirm('confirm');
+			var str = prompt('prompt：'); //返回值是用户所输入的内容
+			console.log(str); 
+			
+			document.onclick = function(){
+				window.open('http://baidu.com','_blank');  //打开一个新的窗口， targrt="_blank"
+				
+			}
+			setTimeout(function(){},2000); //2秒之后执行匿名函数一次。 
+			clearTimeout
+			setInterval(function(){},2000); //每2秒就执行一次
+			clearInterval
+		</script>
+	</head>
+	<body style="height: 2000px;">
+		qwer
+	</body>
+</html>

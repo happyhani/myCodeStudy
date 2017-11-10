@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var str = '2,3,hDncjuhd dd 一34 kjd a1bkj kj2d 7 二9d a3b1三';
+	
+//			var re = new RegExp('a','i');	 //等价于  var re= /a/i;
+			//var re1 = /d/g;                //g 全局
+//			var re1 = /D/gi;                 //i  不区分大小写
+			var re = /\d/g;                 // \d 代表数字    + 代表一个或多个
+			var re1 = /一|二|三/g;			//  |或者
+			console.log( str.match(re) );    // 返回字符串数组
+			console.log( str.search('dd') );   //字符串中符合正则的位置
+			console.log( str.replace(re1,'***') );   
+			
+			console.log( re.test(123) );	//检索字符串中指定的值。返回true或false；
+			console.log( re.exec(str) );  //检索字符串中指定的值。返回找到的值，并确定其位置
+			var re2 =  /a^[123]b/g;  // a1b 或 a2b 或 a3b
+			[123]  [^123]  
+			[0-9]  \d数字   \D非数字
+			[a-z]  [A-Z]  [A-z] 
+			\w  匹配一个数字/字母/下划线 word \W  
+            \s空白符   \S非空白符
+            . 匹配除了回车和换行外的任何单个字符
+
+			console.log( str.match(re2) );  //["a1b", "a3b"] 
+			
+
+			
+
+		
+			
+			
+//			for (var i=0;i<str.length;i++) {
+//				if (str.charAt(i)>'0' && str.charAt(i)<'9') {
+//					str1+=str.charAt(i);
+//				}else {
+//					if(str1){
+//						arr.push(str1);
+//						str1='';
+//					}
+//				}
+//			}
+//			if(str1){
+//				arr.push(str1);
+//				str1='';
+//			}
+//			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

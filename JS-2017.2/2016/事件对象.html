@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			
+		//当发生事件时，所有的事件的信息都存在event对象中。
+			document.onclick = function(ev){
+				var ev = ev || window.event;
+//				 for (var key in ev) {   //遍历出event对象所有的属性，和属性的值                                                                                                                                                   
+//				 	console.log(key+'：'+ev[key]);
+//				 }
+				console.log(ev.clientX);  //鼠标点击时，相对于浏览器水平方向的距离
+				console.log(ev.clientY);  //鼠标点击时，相对于浏览器垂直方向的距离
+				
+			}
+		
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

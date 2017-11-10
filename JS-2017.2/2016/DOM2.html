@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		document.documentElement  //html
+		document.body             //body
+		var oDiv =  document.getElementById("div1");
+		
+		var oA = document.createElement('a'); //创建节点  <a></a>
+		oA.innerHTML = '超链接';  // <a>超链接</a>
+		oA.setAttribute('href','http://baidu.com');
+		
+		oDiv.appendChild(oA);  //追加到div中
+		oDiv.insertBefore(oA,oP);//方法用于在父元素中指定子节点之前添加一个新的子节点
+		oDiv.removeChild(oP)  ;//删除节点   返回值是被删除的节点
+		oDiv.replaceChild(oA,oP);	 //替换节点  返回值被替换的节点
+		
+		oDiv.parentNode  //获取父节点
+		
+		console.log( oDiv.getAttribute('id') );          // 获得属性值
+		console.log( oDiv.setAttribute('class','div1') );// 设置属性
+		oDiv.removeAttribute('id');  //删除属性
+	
+		</script>
+	</body>
+</html>

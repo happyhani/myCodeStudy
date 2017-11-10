@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>11111</li>
+			<li>22222</li>
+			<li>33333</li>
+			<li>44444</li>
+			<li>55555</li>
+		</ul>
+<script type="text/javascript">
+			/*
+				obj.offsetLeft 获取obj到它定位父级的left值 数字
+				obj.offsetTop 获取obj到它定位父级的top值 数字
+
+				只读
+			*/
+			
+//			var oBox = document.getElementById('box');
+//			
+//			oBox.offsetLeft = 0; //无效
+//
+//			alert( oBox.offsetLeft );
+
+		
+
+
+
+var aLi = document.querySelectorAll('ul li');
+
+			for (var i=0;i<aLi.length;i++ )
+			{
+				!function(x){
+					aLi[x].onclick = function(){
+						alert(x);
+					};
+				}(i);
+			}	
+//alert( oBox.scrollHeight ); //实际高，内容不超出和clientHeight一样，内容超出，不管有没有超出隐藏，都是实际高
+//                       
+////alert( parseFloat( gStyle(oBox , 'width') ) ); //获取内容宽
+////alert( oBox.clientWidth ); //获取 width + padding
+////alert( oBox.offsetWidth ); //获取 width + padding + border
+//obj.offsetLeft 获取obj到它定位父级的left值 数字
+//obj.offsetTop 获取obj到它定位父级的top值 数字
+				
+		</script>
+	</body>
+</html>
+
+<script type="text/javascript">
+
+	document.onclick = function(){
+		alert( document.body.scrollTop || document.documentElement.scrollTop ); //获取滚动高度
+	};
+
+</script>

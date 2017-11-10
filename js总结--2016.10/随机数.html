@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击按钮</button>
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn");
+			var oDiv = document.getElementById("div1");
+			
+			for(var i=0;i<20;i++){
+				var arr=[];
+				arr.push(i);
+				document.write(i+'\n');
+				
+			}
+			oBtn.onclick = function(){
+				var shu = Math.floor( Math.random()*20 );
+				
+				
+				//oDiv.innerHTML += shu + "<br/>" ;
+				
+				for(var j=0;j<arr.length;j++){
+					
+					if( shu !== arr[j] ){
+						
+						oDiv.innerHTML += shu + "<br/>" ;
+						
+					}		
+				}			 
+			}
+			
+			
+		</script>
+	</body>
+</html>

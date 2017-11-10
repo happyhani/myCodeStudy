@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			for (var i=0;i<10;i++) {
+//				
+//				for(var j=0;j<10-i;j++){
+//					document.write( '&nbsp;' );
+//				}
+//				for (var k=0;k<=i;k++) {
+//					document.write( '*&nbsp;' );
+//					if (k==i) {
+//						document.write( '<br/>' );
+//					}
+//				}
+//			}
+//  *
+// * *
+//* * *
+// * * * *
+//* * * * *
+
+function outer(){
+ inner();
+}
+function inner(){
+ alert(inner.caller);
+}
+outer(); 
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>	
+//		generator函数：停，一步一步来。用于异步操作
+			function* show(){
+				yield 12;
+				var a = 13;
+				yield a ;
+				
+			}
+			var gen = show();//不是真的执行show函数，只是创建了一个generator对象
+			console.log(gen.next());//真正执行
+		</script>
+		
+	</body>
+</html>

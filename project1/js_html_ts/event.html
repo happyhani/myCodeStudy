@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				height: 2000px;
+			}
+			
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				/*cursor: move;*/
+			}
+			
+		
+		</style>
+	</head>
+	<body>
+
+		<div id="div1"></div>
+
+		
+		<script>
+			var oDiv = document.getElementById("div1");
+		//浏览器顶部68px
+//			document.onclick = function(ev){
+//				alert(ev.clientY);//鼠标点击位置到浏览器页面距离
+//				alert(ev.screenY);//鼠标点击位置到屏幕的距离
+//				alert(ev.pageY);//鼠标点击位置到整个文档，包括向下滚动的距离
+//			}
+		
+			function A(){
+//			 this.name = 'aaa';
+			} 
+			function B(){
+			 this.age = 20;
+			} 
+			A.prototype  = new B();
+			A.prototype.sex = '男';
+			
+			var strA = new A();
+			
+			alert(strA.age); 
+			alert(strA.sex); 
+			
+			
+//			A.prototype.constructor = A;
+//			strA -> A.prototype
+//			
+//			原型对象等于另一个类型的实例
+//			A原型对象等于B类型的实例
+//			
+//			此时的A原型对象将包含一个指向B原型的指针，相应地，B原型中也包含着一个指向B构造函数的指针。
+//			假如另一个原型又是另一个类型的实例，那么上述关系依然成立，如此层层递进，就构成了实例与原型的链条。
+		</script>
+	</body>
+</html>

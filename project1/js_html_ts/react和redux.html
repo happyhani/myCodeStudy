@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+再来说下Redux里的几个核心概念,这里我们把React也加进来：
+
+view(React)
+store(state)
+action
+reducer
+
+接下来看看Redux/React与这个故事的联系：
+
+view(React) = 家具的摆放在视觉的效果上
+store(state) = 每个家具在空间内的坐标(如：电视的位置是x:10, y: 400)
+action = 小明分配任务(谁应该干什么)
+reducer = 具体任务都干些什么(把电视搬到沙发正对面然后靠墙的地方)
+
+所以这个过程应该是这样的：
+
+view ---> action ---> reducer ---> store(state) ---> view
+
+如果放入一个web app中，首先store(state)决定了view，然后用户与view的交互会产生action，这些action会触发reducer因而改变state，然后state的改变又造成了view的变化。
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var arr =['周一','周二','周三'];
+//			arr.push('周四','周五')  //在数组最后添加  返回值：新数组的长度
+//			arr.pop();			//从数组最后删除    返回值：删除的内容
+//			arr.shift();      //从数组开始部分删除   返回值：删除的内容
+//			arr.unshift("周日","hah","hehe");    //从数组最前面添加  返回值：新数组的长度
+//			console.log( arr );
+
+	        //splice() //添加 删除 替换
+	        
+			//arr.splice(0,2);                //删除  返回值：被删除的内容
+			//arr.splice(1,0,"周日","周六");  //添加  返回值 ：空
+			//arr.splice(0,2,"周五");        //替换    返回值：被替换的内容
+//			console.log( arr.splice(0,2,"周五") );
+			var arr1 = [1,2,3];
+//			arr1.concat(4,5);
+			console.log( arr1.concat(4,5) ); //创建并返回一个新数组
+			var arr2 = [1,'qwer',true];
+//			arr2.join(); //返回字符串
+			console.log( arr2.reverse()); 
+//			arr2.reverse();  //颠倒数组内容的顺序
+
+			var arr3 = [11111,2222,33,4,39];
+			arr3.sort(function(a,b){//比较函数
+									//因为在比较之前会将数组的每一项都转化为字符串
+				return a-b;
+			});
+			console.log(arr3);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

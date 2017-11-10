@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					$(".p1").append("追加文本！");    //p标签的子元素
+					$(".p1").prepend("前边的文本！"); //p标签的子元素
+					$(".p1").after("<div>元素之后</div>");      //添加的是p标签的兄弟元素
+					$(".p1").before("<div>元素之前</div>");     //添加的是p标签的兄弟元素
+					
+					
+				})
+				$("#btn2").click(function(){
+					$("p").remove(".p2");		//删除所有class为p2的p标签
+					$(".p1").empty();  //只删除子元素，自身元素不删除。即只剩一个空的class名为p1的p标签
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="添加元素" />
+		<input type="button" id="btn2" value="删除元素" />
+		
+		<p class="p1">Text：这是<strong>文本</strong></p>
+		<p class="p2">Html：这是<strong>文本</strong></p>
+		<a href="#"></a>
+		<input class="otext" type="text" name="text" id="text" value="12345676" />
+	</body>
+</html>

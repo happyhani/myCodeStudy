@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+//				document.documentElement  //html
+//				document.body             //body
+				var oDiv =  document.getElementById("div1");
+				var oP = document.getElementById("p1");
+				var oA = document.createElement('a'); //创建节点
+				oA.innerHTML = '超链接';
+				oA.setAttribute('href','http://baidu.com');
+//				oDiv.appendChild(oA);  //追加到div中
+//				oDiv.insertBefore(oA,oP);//方法用于在父元素中指定子节点之前添加一个新的子节点
+//				console.log( oP.parentNode.removeChild(oP) ) ;//删除节点   返回值是被删除的节点
+				console.log(oDiv.replaceChild(oA,oP));	 //替换节点  返回值被替换的节点
+				
+				
+				
+				
+				console.log(oDiv.childNodes);
+				console.log(oP.parentNode);
+				console.log(oP.nextSibling);  //下一个兄弟节点
+				console.log(oP.previousSibling);//上一个兄弟节点
+				console.log(oDiv.nodeName);// DIV
+				console.log(oDiv.nodeType);// 1  元素节点
+				
+				console.log(oDiv.getAttribute('id'));// 获得属性值
+				console.log(oDiv.setAttribute('class','div1'));// 设置属性
+				oDiv.removeAttribute('id');  //删除属性
+				
+			}
+		</script>
+	</head>
+	<body>
+			<!--百度网盘：账号：qryq801@126.com，密码：tjzytc-->
+		   <div id="div1">
+		   	<p id="p1"></p>
+		   	<p id="p2"></p>
+		   	<p id="p3"></p>
+		   	<p id="p4"></p>
+		   	
+		   </div>               
+	</body>
+</html>

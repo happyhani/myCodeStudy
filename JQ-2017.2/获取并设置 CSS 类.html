@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.color {
+				color:cornflowerblue;
+				
+			}
+			.bg {
+				background: yellow;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function () {
+					$('p,div,a').addClass("color bg");
+				})
+				
+				$("#btn2").click(function () {
+					$('p').removeClass("color bg");
+				})
+				
+				$("#btn3").click(function () {
+					$('div').toggleClass("color");
+				})
+				
+				$("#btn4").click(function () {
+					$('.div1').css({"width":"200px","height":"200px","background":"red"});//直接添加样式到标签上
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button"id="btn1" value="添加class类" />
+		<input type="button"id="btn2" value="删除class类" />
+		<input type="button"id="btn3" value="切换添加/删除class类" />
+		<input type="button"id="btn4" value="设置css" />
+		
+		innerWidth
+		
+		<p>111111111111111111</p>
+		<div>222222222222</div>
+		<a href="#">33333333</a>
+		<div class="div1"></div>
+	</body>
+</html>

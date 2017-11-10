@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML读操作</title>
+		<script type="text/javascript">
+			window.onload = function () {
+				var up = document.getElementById("btn1");
+				var down = document.getElementById("btn2");
+				var oP = document.getElementById("p1");
+				
+				up.onclick = function () {
+					var size = parseInt(oP.style.fontSize);
+					size++ ;
+					oP.style.fontSize = size +'px';
+				}
+				console.log(Boolean(''));
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn1">+</button>
+		<button id="btn2">-</button>
+		
+		<p id="p1" style="font-size: 16px;">离2016年结束只剩下不到三天的时间，辞旧迎新的时刻，进行一下个人总结是必须的。即使混得不好懒得进行个人总结，七大姑八大姨的热情“关心”也会让你无处遁形。
+单身的，问你什么时候谈恋爱;结了婚，又问你什么时候生娃;升职了没?涨工资了没?年终奖拿了多少?还要和隔壁家那谁谁谁，比较!
+总之，逃不过一个核心问题，那就是：你今年混得咋样?</p>
+	</body>
+</html>

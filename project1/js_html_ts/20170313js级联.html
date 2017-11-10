@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8"/>
+	</head>
+	<body>
+		<form action="" name="form1" method="post">
+			<select name="selprovince" onchange="citychange()">
+				<option>请选择省份</option>
+				<option value="辽宁省">辽宁省</option>
+				<option value="山东省">山东省</option>
+				<option value="山西省">山西省</option>
+			</select>
+			<select name="selcity">
+				<option>请选择城市</option>
+			</select>
+		</form>
+	</body>
+	
+	<script language="javascript">
+		function citychange() {
+			var cityList = new Array();
+			cityList['辽宁省'] = ['沈阳', '鞍山', '大连'];
+			cityList['山东省'] = ['济南', '烟台', '蓬莱'];
+			cityList['山西省'] = ['太原', '大同', '平遥'];
+			var pindex = document.form1.selprovince.value;
+			var newoption1;
+			document.form1.selcity.options.length = 0;	//obj.options.length=0; 删除所有选项
+			for(var i in cityList[pindex]) {
+				newoption1 = new Option(cityList[pindex][i], cityList[pindex][i]);//new Option('text','value');
+				document.form1.selcity.options.add(newoption1);
+			}
+		}
+	//index,要删除选项的序号，这里取当前选中选项的序号  var index=obj.selectedIndex; obj.options.remove(index); 
+	</script>
+
+</html>
+

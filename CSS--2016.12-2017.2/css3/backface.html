@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+			#div1 {
+				width: 120px;
+				height: 100px;
+				background-color: yellow;
+				border: 1px solid black;
+				transform: rotateY(25deg);
+				-webkit-transform: rotateY(25deg);
+				/* Safari and Chrome */
+				-moz-transform: rotateY(25deg);
+				/* Firefox */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div1">HELLO</div>
+		<p>旋转div，可选隐藏背面 :</p>
+		<p>隐藏背面:<input type="checkbox" onchange="checkBackface()" id="bf" /></p>
+		Rotate:<br>
+		<input type="range" min="-360" max="360" value="25" onchange="rotate(this.value)" /><br> transform: rotateY(<span id="span1">7deg</span>);<br>
+	<br><br><br><br>
+	-ms-transform:rotate(7deg);                //-ms代表ie内核识别码<br>
+	-moz-transform:rotate(7deg);             //-moz代表火狐内核识别码<br>
+	-webkit-transform:rotate(7deg);         //-webkit代表谷歌内核识别码<br>
+	-o-transform:rotate(7deg);               //-o代表欧朋【opera】内核识别码<br>
+	transform:rotate(7deg);                   //统一标识语句<br>
+	</body>
+		<script>
+			var oDiv = document.getElementById('div1');
+			function rotate(value) {
+				oDiv.style.webkitTransform = "rotateY(" + value + "deg)";
+				oDiv.style.MozTransform = "rotateY(" + value + "deg)";
+				oDiv.style.transform = "rotateY(" + value + "deg)";
+				document.getElementById('span1').innerHTML = value + "deg";
+			}
+
+			function checkBackface() {
+				if(document.getElementById("bf").checked == true) {
+					oDiv.style.webkitBackfaceVisibility = "hidden";
+					oDiv.style.MozBackfaceVisibility = "hidden";
+				} else {
+					oDiv.style.webkitBackfaceVisibility = "visible";
+					oDiv.style.MozBackfaceVisibility = "visible";
+				}
+			}
+		</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				color: red;
+			}
+			div > span { /*子选择器*/
+				border: 1px solid red;
+			}
+			[title = "div1"] { /*属性选择器*/
+				color: red;
+			}
+			h1 + p {
+				color: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<p>文字qwwewrewfrewr</p>
+		<p>文字qwwewrewfrewr</p>
+		<div>hahahah
+			<span>span1
+				<span>span2</span>
+			</span>
+			<span>span1</span>
+			<span>span1</span>
+			<span>span1</span>
+		</div>
+		<div title="div1">123</div>
+		<h1>标题</h1>
+		<p>文字qwwewrewfrewr</p>
+		<p>文字qwwewrewfrewr</p>
+		<p>文字qwwewrewfrewr</p>
+	</body>
+</html>

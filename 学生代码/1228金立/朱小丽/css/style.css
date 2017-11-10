@@ -1,0 +1,113 @@
+#box{                                        /*最外层*/
+        	width: 1000px;        
+        	padding: 0;
+        	margin:auto;
+        }
+        ul{
+       		list-style-type: none;
+       	}
+       	
+       	ol{
+       		list-style-type: none;
+       		float: left;
+		    display:inline;	
+       	}
+       	.head{                                           /* 头*/
+       		width: 100%;      		
+       		background:#000000;
+       	}
+       	.logo{
+       		width: 200px;
+       	    background-repeat: no-repeat;
+       	    margin-left: 75px;
+       		float: left;        	      		   		       		
+       	}     		        	
+       	.nav{
+       		width:400px;  		       		
+       		float: left;
+       	} 
+       	.td1{
+       		float: left;
+       		margin-left: 10px;
+       	}
+       	.td1:hover{
+            background-color:blue;
+            color:#ccc;
+        }
+       .regsiter{
+       	    float: left;	
+       }  
+       a{
+       	text-decoration: none;
+       }    
+       .search{
+           	float: left;	            	
+        }
+        .banner{                                  /*banner图*/
+             width: 100%;            
+             background: #FFFFFF;
+             text-align: center;
+        }
+       	#content{                                 /*content*/
+       		width: 100%;       		
+       		background-color:#eaeaea;
+       	}
+       	.leixing{
+       		width: 800px;
+       		font-size:11px;
+       		margin: auto;
+       		background-color: #ffffff;
+       		margin-top: 5px;      		
+       	}     		
+       	}
+       	.summary{
+       		width: 800px;   		
+       		background-color: #FFFFFF;
+       		margin-top: 15px;
+       	}
+       	.p1{
+       		float: left;
+       	}       	
+        .table1{
+        	width: 800px;
+        	background-color: white;
+        	margin: 0 auto;
+        	text-align: center;
+        }
+        .p2
+        {
+        	margin: auto;
+        	width: 800px;
+        	background-color: #FFFFFF;
+        	margin-top: 10px;
+        }
+        .footer{                                      /* 页脚部分*/
+       		width: 100%; 
+       		background: #FFFFFF;   
+       		margin-top: 10px; 		    		
+       	}  
+       	.a{                                            /*售后服务shouhou*/
+       		float: left;
+       	    text-align: center;
+       	    margin-left:12%;
+       	}
+       	.hr1{                                               /*水平线*/
+       		width: 800px;
+       		background: #9A9A9A;
+       	}
+        #zixun{                                             /*咨询*/
+        	margin-left: 70px;
+        }
+        .ul1{
+			float: left;
+		    display:inline;	
+		    font-size: 9px;
+		    letter-spacing:2px;	    
+			}        			
+		.ziti{
+			font-weight: bold;
+			font-size: 13px;
+		}			
+       	.erweima{			                              /*二维码*/
+		    margin-left: 800px;
+			}

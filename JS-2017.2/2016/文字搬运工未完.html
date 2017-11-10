@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p">拿到粔籹对了胡</p>
+		<script>
+		    var oP = document.getElementById("p");
+			var str = oP.innerHTML;
+			function del(){
+				var str = oP.innerHTML;
+				var aW = str.length;
+				for (var i=0;i<aW;i++) {
+					var del = str.split('').pop();
+					var arr = str.split('');
+					arr.shift();
+					break;
+				}
+				oP.innerHTML = arr.join('');
+				return oP.innerHTML;
+			}
+			if (??) {
+				clearInterval(timer);
+			}else{
+				var timer = setInterval(del,100);	
+				
+			}
+//			del();
+				
+		</script>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				
+//				$(".btn").click(function(){
+//					$("#div1").toggle(2000);//显示、隐藏
+//
+//				})
+
+				//hover 显示 隐藏	函数作为参数时,是回调函数
+//				$('.btn').hover(function(){
+//					$("#div1").hide( 600,isHide );//isHide就是回调函数
+//				},function(){
+//					$("#div1").show();  //不写参数时。默认400毫秒
+//					
+//				})
+//				"slow"  600毫秒
+//				"normal"  400毫秒
+//				"fast"  200毫秒
+//				function isHide(){
+//					alert("隐藏了！！！");
+//					
+//				}
+//				function isShow(){
+//					alert("出现了！！！");
+//					
+//				}
+//淡入淡出
+//				$(".btn").hover(function(){
+//					$("#div1").fadeOut(1000);
+//					
+//				},function () {
+//					$("#div1").fadeIn(1000);
+//					
+//				})
+//动画可以操作多个属性
+//				$(".btn").click(function(){
+//					$("#div1").animate({"width":"1000px","height":"300px"},3000);
+//					
+//				})
+//动画的队列
+//				$(".btn").click(function(){
+//					$("#div1").animate({"width":"+=1000px"},3000);
+//					$("#div1").animate({"height":"300px"},3000);
+//					
+//					
+//				})
+//停止动画
+//				$(".btn1").click(function(){
+////					$("#div1").stop();		      //停止当前动画，执行下一条动画
+////					$("#div1").stop(true);        //停止所有动画
+//						$("#div1").stop(true,true);  //结束当前动画，立刻到达动画完毕的状态
+//					
+//				})
+	//jq链条	 链式操作		
+				$(".btn").click(function(){
+					$('p').css("color","aquamarine").slideUp(1000).slideDown(1000);
+				})
+				
+			})
+			
+
+//			window.onload = function(){
+//				
+//			}
+		</script>
+	</head>
+	<body>
+		<button class="btn">开始动画</button>
+		<button class="btn1">停止动画</button>
+		
+		<div id="div1"></div>
+		<p>1111111111111111111111</p>
+	</body>
+</html>

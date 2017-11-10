@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			oDiv.style.width //只能获取行内样式
+			oDiv.style.cssText = 'width:350px;';
+			getComputedStyle(oDiv).width  //经过计算机计算后得到width IE678不兼容    样式表或js设置的都可以获取
+			oDiv.currentStyle.width       //当前样式    标准浏览器不兼容
+			
+			function getStyle (obj,attr) {
+				if (obj.currentStyle[attr] ) {//不能用 . //因为不能乱改
+					return obj.currentStyle[attr];
+				}else {
+					return getComputedStyle(obj)[attr];
+				}
+			}
+//			用字符串方法完善
+//			background //不要获取复合样式
+//			backgroundColor  //单一样式  不要用来做判断
+//			不要有空格
+//			不要获取没有给元素设置的样式
+		</script>
+	</body>
+</html>

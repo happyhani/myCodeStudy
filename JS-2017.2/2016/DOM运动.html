@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: #6495ED;
+				position: absolute;
+				left: 40px;
+				border: 5px solid red;
+				padding: 20px;
+				/*margin: 20px;*/   
+			}
+			/*#bg {
+				width: 300px;
+				height: 200px;
+				background: red;
+				position: relative;
+				left: 20px;
+			}*/
+		</style>
+	</head>
+	<body>
+		<input type="button" value="开始" />
+		<input type="button"  value="停止" />
+		<div id="div1"></div>
+		
+		<script>
+			var oStart = document.getElementsByTagName("input")[0];
+			var oStop = document.getElementsByTagName("input")[1];
+			var oDiv = document.getElementById("div1");
+			var timer = null;
+			var dis = 10;
+//			console.log(oDiv.offsetWidth); //div的宽+border+padding
+//			div设置margin后  不行
+			//console.log( oDiv.offsetLeft );  //相对于有定位的父级  没有单位 只是一个数字
+			oStart.onclick = function (){
+				clearInterval(timer);
+				timer = setInterval (function  () {
+					if ( oDiv.offsetLeft >= window.innerWidth - oDiv.offsetWidth ){
+						dis = -10;
+					}else if ( oDiv.offsetLeft<0 ){
+						dis = 10;
+					}
+					oDiv.style.left = oDiv.offsetLeft + dis +'px';
+				},20);
+					
+			}
+			oStop.onclick = function(){
+				clearInterval(timer);
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var str = 'qwe';    //全局变量
+			
+			function abc (){
+				var str = '123';//局部变量
+//				console.log(str1);//123
+				console.log(str); //qwe
+				
+			}
+			abc();
+//			console.log(str1);//报错 全局下访问不到局部变量
+//			console.log(str); //qwe
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

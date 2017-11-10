@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//情况1**：构造函数**
+			function Foo(){
+				this.name="haha";
+				this.age="20";
+				console.log(this);//Foo {name: "haha", age: "20"}，新new出来的对象
+			}
+			var foo  = new Foo();
+			console.log(foo.name);
+			Foo();//this指向window{}
+			
+//构造函数的prototype中，this代表着什么。
+		function Fn(){
+			this.name = 'haha';
+			this.year = 20;
+		}
+		Fn.prototype.getName = function(){
+			console.log(this.name);
+		}
+		var f1=new Fn();
+		f1.getName();//haha
+		//在Fn.prototype.getName函数中，this指向的是f1对象。因此可以通过this.name获取f1.name的值。
+		//其实，不仅仅是构造函数的prototype，即便是在整个原型链中，this代表的也都是当前对象的值。
+		</script>
+		<script>
+//情况2**：函数作为对象的一个属性**
+			var obj = {
+				x:10,
+				fn: function(){
+					console.log(this);//Object {x: 10}
+				}
+			}
+			obj.fn();//fn不仅作为一个对象的一个属性，而且的确是作为对象的一个属性被调用。结果this就是obj对象。
+					//	注意，如果fn函数不作为obj的一个属性被调用，会是什么结果呢？
+			var fn1 =obj.fn;
+			fn1();
+			//如上代码，如果fn函数被赋值到了另一个变量中，并没有作为obj的一个属性被调用，那么this的值就是window，this.x为undefined。
+		</script>
+		<script type="text/javascript">
+//情况3：函数用call或者apply调用
+
+当一个函数被call和apply调用时，this的值就取传入的对象的值。
+			
+			var obj ={
+				x:10
+			};
+			
+			var fn = function(){
+				console.log(this);//object{x:10}
+				console.log(this.x);//10
+			}
+			fn.call(obj);
+		</script>
+		<script type="text/javascript">
+//情况4：全局 & 调用普通函数			
+
+在全局环境下，this永远是window
+普通函数在调用时，其中的this也都是window。
+			var obj = {
+				x:10,
+				fn: function(){
+						function f(){
+							console.log(this);//window
+							console.log(this.x);//undefined
+						}
+						f();
+				}
+			}
+			obj.fn();
+函数f虽然是在obj.fn内部定义的，但是它仍然是一个普通的函数，this仍然指向window。
+
+
+		</script>
+this的取值，分四种情况。我们来挨个看一下。
+在此再强调一遍一个非常重要的知识点：
+在函数中this到底取何值，是在函数真正被调用执行的时候确定的，函数定义的时候确定不了。
+因为this的取值是执行上下文环境的一部分，每次调用函数，都会产生一个新的执行上下文环境。
+	</body>
+</html>

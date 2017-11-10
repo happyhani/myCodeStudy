@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			const a =2;//常量
+			const b = {aa:1,bb:2,cc:3}
+			b.aa+=3;//不能保护内部的数据，只能保证b
+			alert(a);
+			console.log(b);
+			//块级作用域
+			{
+				let b = 10;
+				alert(b);
+			}
+			//解构赋值			前边和后边结构一样即可  用处：解析结构复杂的数据
+			var {qwe,ert} = {}
+			var [qq,{pp,c}] = [11,{pp:22,c:44}];
+			alert(qq+""+c+""+pp);
+			//规约 谓词函数
+//			google map/reduce 云计算
+//			generator yield  分步执行
+//			Promise   		   优化回调函数
+			
+		</script>
+	</body>
+</html>

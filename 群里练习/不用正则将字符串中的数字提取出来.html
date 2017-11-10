@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串中提数字</title>
+	</head>
+	<body>
+	  <script> 
+	    var str ='123ert456uggjh789';
+	    var reg = /\d+/g;
+	    var arr = [];
+	    var arrItem = '';
+	    var len = str.length;
+	    
+	    console.log(str.match(reg)); // 方法一： 正则
+	    
+//	    for(var i=0; i<str.length;i++){
+//	      if (!isNaN(str.charAt(i))) {
+//	        for (var y=i+1; y<str.length;y++) {
+//	          if (isNaN(str.charAt(y))){
+//	            arr.push(str.slice(i,y));
+//	            str = str.split(str.slice(i,y)).join('');
+//	          }
+//	        }
+//	      }
+//	    }
+//	    console.log(arr);
+      
+	    for (var i=0; i<len;i++) {
+	    	if (!isNaN(str[i])) {                    // 是数字
+	    		arrItem += str[i];
+	    	}else if(isNaN(str[i]) && arrItem!='') { // 非数字
+	    	  arr.push(arrItem);
+	    	  arrItem = '';
+	    	}
+	    	if (i===str.length-1 && arrItem!='') {          // 最后一次
+	    		arr.push(arrItem);
+          arrItem = '';
+	    	}
+	    }
+	    console.log(arr);
+	    
+	  </script>
+	</body>
+</html>

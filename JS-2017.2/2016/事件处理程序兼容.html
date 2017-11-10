@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/event.js"></script>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<input type="button" id="btn" value="按钮" />
+		<script type="text/javascript">
+			var oDiv = document.getElementById("div1");
+			var btn = document.getElementById('btn');
+//				if(btn.addEventListener){
+//					btn.addEventListener('click',show);
+//				}else if(btn.attachEvent){
+//					btn.attachEvent('onclick',show);
+//				}else{
+//					btn.onclick = show;
+//				}
+//				function show(){
+//					alert('Hello word!');
+//				}
+			function add(){
+				alert(123);
+			}
+			EventUtil.addHandler(btn,'click',add);   
+		</script>
+		
+	</body>
+</html>

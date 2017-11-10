@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*实现两列布局，以更高的元素为基准，保持两列等高
+			left,right{margin-bottom:-1000px;pading-bottom:1000px;}*/
+		</style>
+	</head>
+	<body>
+		<script>
+		//判断是否有autofocus属性，如果没有用脚本实现
+			if(!("autofocus" in document.createElement("input"))){
+				document.getElementById("s").focus();
+			}
+		</script>
+		<!--表示自动完成autocomplete="on"-->
+		<!--post时需要设置enctype="multipart/form-data"编码类型，get方式不需要-->
+		<form action="a.php" method="post" autocomplete="on" id="form1" enctype="multipart/form-data">
+			<input type="text"  list="city"/>
+			<datalist id="city" style="display: none;">
+				<option value="beijing">北京</option>
+				<option value="shanghai">上海</option>
+				<option value="hangzhou">杭州</option>
+			</datalist>
+			<br /><br />
+			
+			自动获取焦点：<input type="text" name="" id="" value="" autofocus="on"/>
+			
+			<input type="submit" name="" id="" value="提交到页面1" formaction="1.asp"/>
+			<input type="submit" name="" id="" value="提交到页面2" formaction="2.asp"/>
+			<input type="submit" name="" id="" value="提交到页面3" formaction="3.asp"/>
+			<!--只适用于input-image的width，height-->
+			<input type="image" src="qq.jpg" width="50" height="50">
+			一次上传多个文件，或email：<input type="file" name="" id="" value="" multiple="multiple"/>
+		</form>
+		<br /><br />
+		form属性：<input type="text" form="form1"/>
+		
+	
+	</body>
+</html>

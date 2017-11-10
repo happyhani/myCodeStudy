@@ -1,0 +1,46 @@
+*{margin: 0; padding: 0;}
+#div1 {
+	width: 500px;
+	height: 300px;
+	margin: 20px auto;
+	overflow: ;
+	position: relative;
+}
+#ul1 {
+	width: 3000px;
+	height: 300px;
+	list-style-type: none;
+	position: absolute;
+}
+#ul1 li {
+	width: 500px;
+	height: 300px;
+	float: left;
+}
+#ul1 li div{
+	width: 500px;
+	height: 300px;
+}
+#next {
+	position: absolute;
+	top: 49%;
+	right: 10px;
+	z-index: 2;
+	cursor: pointer;
+}
+#prev {
+	position: absolute;
+	top: 49%;
+	left: 10px;
+	z-index: 2;
+	cursor: pointer;
+}
+#list li {
+	width: 8px;
+	height: 8px;
+	margin-top: 5px;
+	background: #ccc;
+}
+#list li.active {
+	background-color: red;
+}

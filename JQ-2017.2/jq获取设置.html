@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$('p').eq(0).click(function(){
+					$(this).text("hehe") ;
+					
+				})
+				$('p').eq(1).click(function(){
+					alert( $(this).html() );
+
+					
+				})
+				$("#btn").click(function () {
+//					alert($("#text").val());     //用于获取表单字段
+					$("a").attr("href","###");  //attr() 方法用于获取属性值。attr("href","###")用于设置属性的值
+
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<p>Text：这是<strong>文本</strong></p>
+		<p>Html：这是<strong>文本</strong></p>
+		<a href="#"></a>
+		<input class="otext" type="text" name="text" id="text" value="12345676" />
+	</body>
+</html>

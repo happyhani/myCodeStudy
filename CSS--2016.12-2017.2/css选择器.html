@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul > li:last-child {
+			   color: red;
+			}
+			li:nth-of-type(3n) { /*li中第3个的倍数被选中*/
+  				color: red;
+			}
+			p:first-line { 
+			   font-weight: bold;
+			   font-size: 1.2em;
+			}
+			div ul:nth-of-type(1) > li:nth-child(2) {
+			   font-weight: bold;
+			}
+			/*如果我们想定位锚点属性`href`中以`http`开头的标签*/
+			a[href^="http"] {
+			   /*background: url(path/to/external/icon.png) no-repeat;*/
+			   padding-left: 10px;
+			   background: red;
+			}
+			a[href$=".jpg"] {
+				/*以.jpg为结尾的，图片链接*/
+				
+			  color: red;
+			}
+			a[data-filetype="image"] {
+				/*我们可以给每个锚点加个属性`data-filetype`指定这个链接指向的图片类型。我们就可以去用标准的办法只去选定文件类型为`image`的锚点了。*/
+			}
+			/* Target data-info attr that contains the value "external" */
+			a[data-info~="external"] {
+				/*这个`~`符号可以定位那些某属性值是空格分隔多值的标签。*/
+			   color: red;
+			}
+			
+			/* And which contain the value "image" */
+			a[data-info~="image"] {
+			  border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+			<li>555</li>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+			<li>555</li>
+			<li>111</li>
+			
+		</ul>
+		<p>时间：2016年11月30-12月1日，荷兰阿姆斯特丹未来Web技术（CNCC专题论坛）时间：2016年10月20日，中国太原2016中国计算机大会（CNCC 2016）时间：2016年10月20-22日，中国太原Web与虚拟现实技术研讨会（W3C Workshop on Web and Virtual Reality）时间：2016年10月19-20日，美国山景城W3C技术大会及顾问委员会会议（TPAC 2016）时间：2016年9月19-23日，葡萄牙里斯本国际开放物联网技术与标准峰会暨W3C WoT IG会议时间：2016年7月11-14日，中国北京</p>
+	
+		<div>
+		   <p> My paragraph here. </p>
+		   <ul>
+		      <li> List Item 1 </li>
+		      <li> List Item 2 </li>
+		   </ul>
+		
+		   <ul>
+		      <li> List Item 3 </li>
+		      <li> List Item 4 </li>
+		   </ul>   
+		</div>
+		<a href="http://www.baidu.com">百度</a>
+		<!--我们可以设置一个`data-info`属性，它可以用来设置任何我们需要的空格分隔的值。这个例子我们将指示它们为外部连接和图片链接。-->
+		<a href="path/to/image.jpg" data-info="external image"> Click Me, Fool </a>
+	</body>
+</html>

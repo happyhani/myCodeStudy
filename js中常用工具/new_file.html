@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <button  onclick="alert(123);">点击</button>
+	  <script>
+//	    var num;
+//	    console.log(num);
+//	    var num = 123;
+//	    console.log(num);
+//	    typeof
+	    var a = true;
+	    var b = "123";
+	    var c = 123;
+	    var d = null;
+	    var e;
+	    var f = function  () {
+	    	
+	    }
+	    console.log(typeof(a));
+	    console.log(typeof(b));
+	    console.log(typeof(c));
+	    console.log(typeof(d));
+	    console.log(typeof(e));
+	    console.log(typeof(f));
+	    console.log(typeof(g));
+     var time = 20;
+     if (7<time && time<9) {
+     	eat(time);
+     }else if (9<=time && time<=18) {
+       study (time);
+     }else if (18< time < 22) {
+       play (time);
+     }
+    
+    function eat (time) {
+      console.log(time + '点了,吃早饭了！');
+    }
+    function study (time) {
+      console.log(time + '点了,好好学习！');
+    }
+    function play (time) {
+      console.log(time + '点了,去玩耍了！');
+    }
+    
+    document.getElementById("click").onclick=function(){
+      var n = 100;
+      	setTimeout(function () {
+    		alert(n);
+      	},3000);
+    }
+    function go()
+      {
+      history.go(2);
+      }
+      
+	  </script>
+	 
+	</body>
+</html>

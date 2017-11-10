@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span {
+				text-shadow: -5px 5px 5px rgba(255,0,0,.4) ;
+			}
+			.div1{
+				width: 500px;
+				border: 1px solid #911001;
+				padding: 20px;
+				/*height: 50px;*/
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;/*文本溢出*/
+				
+			}
+			.div2 {
+				width: 100px;
+				border: 1px solid #911001;
+				height: 400px;
+				/*word-break: break-all;*/
+				/*word-break: keep-all;*/
+				/*word-wrap: break-word;*/
+				
+			}
+			
+			@font-face{
+				font-family: "华文彩云";
+				src:url(font/STCAIYUN.TTF);
+			}
+			body{
+				font-family: "华文彩云";
+			}
+		</style>
+	</head>
+	<body>
+		<span>文本阴影</span>
+		<div class="div1">Lorem ipsum dolor sit amet,consectetur adipisicing elit. Maiores aspernatur saepe unde delectus molestias eius odio corporis at iusto quibusdam molestiae quos sapiente sequi libero ea perspiciatis illum voluptas esse.</div>
+		<div class="div2">text:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq fr fg 2113 一一一一一一一一一一一一一一一一一一一一一一34324 324</div>
+	</body>
+</html>

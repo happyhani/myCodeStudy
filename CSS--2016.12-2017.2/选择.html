@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				border: 1px solid black;
+			
+				width: 300px;
+				height: 200px;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				-o-text-overflow:ellipsis;
+				white-space:nowrap;
+				
+			}
+			
+			
+			ul > li{
+				
+				border: 1px solid red;
+				padding-left: 0;
+				list-style-type: none;
+				text-transform: uppercase;
+				
+			}
+			li {
+					border: 1px solid red;
+			}
+			.span {
+				background-color: #ccc;
+				text-transform: uppercase;
+				border: 1px solid red;
+
+
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1" id="div1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum beatae vel magnam. A sapiente dolorum neque modi obcaecati ipsam esse ad quia minus quaerat minima inventore illum vero aliquam reiciendis.</div>
+		<ul>
+			<li>123<span>123</span></li>
+			<li>123</li>
+			<span>123</span>
+			<li>asd<span>qwe</span></li>
+			<li>123</li>
+			<ul>
+				<li></li>
+			</ul>
+		</ul>
+		<span class="span">qwe123i  <i>qwe</i></span>
+	</body>
+</html>

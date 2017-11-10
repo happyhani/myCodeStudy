@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.bg {
+				width: 200px;
+				height: 200px;
+				padding: 20px;
+				border: 5px dashed #000;
+				margin: 20px;
+				background-image: url(img/border.png),url(img/bg1.jpg);/*可同时有多个背景图*/
+				/*background-size: 100% 100%;*/
+				background-repeat: no-repeat;
+				/*background-origin: border-box;*/
+				/*background-origin: padding-box;*/
+				background-origin: content-box;
+				
+				
+			}
+			.bg1 {
+				width: 200px;
+				height: 200px;
+				padding: 20px;
+				border: 5px dashed #000;
+				margin: 20px;
+				background-color: red;
+				/*background-clip: border-box;*/
+				/*background-clip: padding-box;*/
+				background-clip: content-box;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg"></div>
+		<div class="bg1"></div>
+		
+	</body>
+</html>

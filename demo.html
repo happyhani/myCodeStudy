@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 Hover</title>
+	<style type="text/css">
+		/*.demo,.img,.border,.mask{
+			width: 300px;
+			height: 300px;
+		}
+		.demo{
+			position: relative;
+			margin:50px auto;
+		}
+		.img{
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			border-radius: 50%;
+		}
+		.border{
+			position: absolute;
+			border: 10px solid #072256;
+			border-left-color:#E07514;
+			border-top-color:#E07514;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			-webkit-transition:all .5s ease-in;
+			transition:all .5s ease-in;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+		}
+		.mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			-webkit-transition:all .5s ease-in;
+			transition:all .5s ease-in;
+			color:rgba(255,255,255,0);
+		}
+		.demo:hover .mask{
+			background-color:rgba(0,0,0,0.5);
+			color:rgba(255,255,255,1);
+		}
+		.demo:hover .border{
+			-webkit-transform:rotate(180deg);
+			transform:rotate(180deg);
+
+		}*/
+
+    .demo, .img, .mask, .border {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+    .demo {
+      position: relative;
+      margin: 50px auto;
+    }
+    .img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+    .mask, .border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .5s ease-in;
+      -webkit-transition: all .5s ease-in;
+    }
+    .border {
+      border: 10px solid #072256;
+      border-left-color:#E07514;
+      border-top-color:#E07514;
+      box-sizing: border-box;
+    }
+    .demo:hover .mask {
+      background-color: rgba(0, 0, 0, .5);
+      transition: all .5s ease-in;
+      -webkit-transition: all .5s ease-in;
+    }
+    .demo:hover .border {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transition: all .5s ease-in;
+      -webkit-transition: all .5s ease-in;
+    }
+	</style>
+
+</head>
+<body>
+  <div class="demo">
+    <div class="img" style="background-image:url(small.jpg)"></div>
+    <div class="mask"></div> 
+    <div class="border"></div>
+  </div>
+</body>
+</html>

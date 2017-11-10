@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>取消默认冒泡</title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background: #6495ED;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<a href="http://baidu.com">百度</a>
+	         <input type="button" value="按钮" id="btn">
+	         <input type="button" value="按钮2" id="btn2">
+	         <input type="button" value="按钮3" id="btn3">
+      	</div>
+		<script>
+			var  box=document.getElementById('box');
+			box.addEventListener('click',function(){
+				alert('我是父级boxdiv');
+			},false);
+ 
+			var oA = document.getElementsByTagName("a")[0];
+			oA.onclick=function  (ev) {
+				var ev = ev || window.event;
+				ev.preventDefault();    //取消默认事件  
+			  	ev.stopPropagation();   //取消冒泡事件
+			
+			}
+		</script>
+	</body>
+</html>

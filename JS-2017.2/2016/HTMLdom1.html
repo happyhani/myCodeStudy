@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTMLDOM操作表格</title>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="10" id="myTable">
+	        <tr>
+	            <td>商品名称</td>
+	            <td>数量</td>
+	            <td>价格</td>
+	            <td>操作</td>
+	        </tr>
+	        <tr id="tr_1">
+	            <td>AAAAAAAA</td>
+	            <td>1</td>
+	            <td>9999</td>
+	            <td>
+	                <input type="button" value="删除" onclick="delTr(1)"/>
+	                <input type="button" value="修改" onclick="updateTr(1)"/>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td colspan="4" align="center">
+	                <input type="button" value="增加" onclick="addTr()"/>
+	            </td>
+	        </tr>
+	    </table>
+	    <script>
+	   
+		    var index =2;
+	    	function addTr (){
+		    	var myTable = document.getElementById("myTable");
+	    		var newTr = myTable.insertRow( myTable.rows.length-1 );//新创建一行
+	    		newTr.id = 'tr_'+index;
+	    		newTr.insertCell(0).innerHTML = "手机";
+	    		newTr.insertCell(1).innerHTML = index;
+	    		newTr.insertCell(2).innerHTML = index*10;
+	    		newTr.insertCell(3).innerHTML = '<input type="button" value="删除" onclick="delTr('+index+')"/> '
+	    		+'<input type="button" value="修改" onclick="updateTr('+index+')"/>';
+	    		index++;
+	    	}
+	    	function delTr(i){
+	    		var oTr = document.getElementById("tr_"+i);
+	    		myTable.deleteRow(oTr.rowIndex);  //需要知道删除第几个
+	    	}
+	    	function updateTr(i){
+	    		var oTr = document.getElementById("tr_"+i);
+	    		oTr.cells[1].innerHTML = '<input type="text" value="'+oTr.cells[1].innerHTML+'" id="input_'+i+'"/>'
+	    		oTr.cells[3].innerHTML = '<input type="button" value="删除" onclick="delTr('+i+')"/> '
+	    		+'<input type="button" value="确认" onclick="yesTr('+i+')"/>';
+	    	}
+	    	function yesTr(i){
+	    		var oTr = document.getElementById("tr_"+i); 
+	    		var oInp = document.getElementById("input_"+i);
+	    		oTr.cells[1].innerHTML = oInp.value;
+	    		oTr.cells[3].innerHTML = '<input type="button" value="删除" onclick="delTr('+i+')"/> '
+	    		+'<input type="button" value="修改" onclick="updateTr('+i+')"/>';
+	    	}
+	    </script>
+	</body>
+</html>

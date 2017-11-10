@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		var arr = [1,2,3,40,0,00,1,0,0,0,0];
+//		!function (){
+//			
+//			for(var i=arr.length-1;i>=0;i--){
+//				for(var j=arr.length-i-1;j>=i+1;j--){
+//					if(arr[i]==arr[j]){
+//						arr.pop(arr[j]);
+//					}
+//				}	
+//			}
+//			
+//			alert(arr);	
+//			alert(123);	
+//		}()
+
+		function oSort(arr){
+			var result=[];
+			var newArr=[];
+			 for(var i=0;i<arr.length;i++){
+			 	if(!result[arr[i]]){
+			 		newArr.push(arr[i]);
+			 		result[arr[i]]=1; //不重复的存1，重复的不存
+			 		
+			 		//当arr的每一个下标对应的值=>作为result的下标。如果arr有重复的值，则result的下标重复。
+			 		//如果result下标是新值，则将arr数组中对应的值push到新数组中，并且将result的下标存一个值1。如果result下标重复则不执行代码
+			 		
+			 	}
+			 	
+			 }
+			return newArr;
+		}
+		var asd=oSort(arr);
+		alert(asd);
+		</script>
+		
+	</body>
+</html>

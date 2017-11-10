@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			for (var i=0;i<10;i++) {document.write(i);}  //没有时间概念
+			//setInterval( 函数,毫秒 );                   //周期性
+//			clearInterval                                //清除定时器
+			var i=0;
+//			var timer = null;
+			setInterval(function(){
+				i++;
+				document.write(i);
+				if (i>=20) {	
+//					clearInterval(timer); //清除定时器
+				}
+			},100 ); //函数名不加() 加()就是直接调用函数	
+			
+			function abc(){
+				i++;
+				document.write(i);
+				if (i>=20) {	
+//					clearInterval(timer); //清除定时器
+				}
+			}
+//			abc();  					 //直接调用
+//			oBtn.onclick = function(){ } //事件调用
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

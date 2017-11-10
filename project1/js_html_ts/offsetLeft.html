@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style> 
+		* {margin: 0;padding: 0;}
+			#div1 {
+				width: 300px;
+				height: 300px;
+				background: red;
+				margin-left: 20px;
+				position: absolute;
+			}
+			#div2 {
+				width: 100px;
+				height: 100px;
+				background: black;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">
+				
+			</div>
+		</div>
+		<script>
+			var oDiv1 = document.getElementById("div1");
+			var oDiv2 = document.getElementById("div2");
+			alert(oDiv2.offsetLeft)//到有定位的父级，并且没有单位px
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		var patt = /ini/g;
+		var patt1 = new RegExp("ewert","g");
+		var arr = patt.exec("The best things in life are free!")
+ 		//alert( patt.test("The best things in life are free!") ); 
+		///e/.test("The best things in life are free!") 
+		//alert( arr); 
+		var str = "12345678rr";
+		var match1= str.match(/567/);//返回null或者匹配字符串的一部分，不包含在字符串中的如0123也是null
+		var rep = str.replace(/2/,1).replace(/3/,1);
+		function haha(){
+			this.nane = "aa";
+		};
+		haha.prototype.name="bb";
+		function Fn(){
+			
+		};
+		var fn = new Fn();
+		var obj = {};
+		console.log(match1);
+		console.log(rep);
+		console.log(str.split(''));//字符串分割成数组
+		console.log(str.search(/r/));//类似与str的indexof但是还可以search正则
+		console.log(str.constructor);//function String(){}
+		console.log(str._proto_);//undefined
+		console.log(str.constructor.prototype);//Object String{charAt:charAt(),charCodeAt:charCodeAt()}
+		console.log(str.constructor.prototype.constructor);//function String(){}
+		console.log(haha.arguments)//null
+		console.log(fn.__proto__ === Fn.prototype)//true
+		console.log(haha.prototype)//object.默认的只有一个叫做constructor的属性
+		console.log(haha.prototype.constructor)//function haha(){}
+		//prototype的属性值是一个对象，默认的只有一个叫做constructor的属性，指向这个函数本身。
+		console.log(obj.__proto__)//隐示原型
+		console.log(typeof fn);//无法判断引用类型只有object/function
+		var Foo = new Function();
+		console.log(Foo.__proto__===Function.prototype);//true
+		function Object (){
+			
+		}
+		var o1 =new Object();
+		console.log(Object.__proto__===Function.prototype);//true
+		console.log(Function.prototype.__proto__===Object.prototype.__proto__);//true
+		console.log(Function.prototype===Object.prototype);//false
+		console.log(Object.prototype.__proto__);//object{}
+		console.log(o1.__proto__===Object.prototype);
+		console.log(Object.prototype.__proto__.__proto__);//null
+		console.log(haha.hasOwnProperty(name))//false，判断name是否是自己原有的。还是原型中继承的。false是继承的
+		</script>
+		因为每个对象都有一个隐藏的属性——“__proto__”,这个属性引用了创建这个对象的函数的prototype
+		
+		每个函数都有一个属性叫做prototype。比如haha函数
+		这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。
+		str.constructor指向构造函数
+		
+		做一个空的构造函数，构造函数的原型指向一个属性集合
+		function Fn() { }
+		Fn.prototype.name = '王福朋';
+		Fn.prototype.getYear = function () {
+    		return 1988;
+		};
+		var fn = new Fn();
+		fn.name;可以访问到
+	</body>
+</html>

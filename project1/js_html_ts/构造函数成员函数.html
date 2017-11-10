@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html>  
+	<head> 
+		<meta charset="UTF-8">
+		<title>constructor and prototype</title>
+		<B>CONSTRUCTOR AND PROTOTYPE<br><br></B>  
+	</head>  
+	<body>  
+		
+简述：
+类有不同的构造函数，和成员函数
+这里定义一个类，其中使用prototype声明定义该类的成员函数.
+
+<br/>
+<br/>
+
+知识点：
+1 . JavaScript构造函数
+
+2.prototype 写成员函数<br/><br/>
+
+		<script type = "text/javascript">  
+		    /*************************CONSTRUCTOR**********************/  
+		    var Person = function(name){  
+		        this.name = name;  
+		    };  
+		      
+		    var Person = function(name, age){  
+		        this.name = name;  
+		        this.age = age;  
+		    };  
+		      
+		    /*************************PROTOTYPE************************/  
+		      
+		    Person.prototype.getName = function(){    //member function: getName();  成员函数
+		        return this.name;  
+		    };  
+		      
+		    Person.prototype.getAge = function(){     //member function: getAge();  
+		        return this.age;  
+		    };  
+		      
+		    /********************TEST**********************************/  
+		      
+		    var person1 = new Person("John");   // use constructor 1 @param: name  
+		      
+		    var person2 = new Person("Peter",2); // use constructor 2 @param: name, age  
+		      
+		    document.write("person1=>name: " + person1.getName() + ", Person1=>age: " + person1.getAge() + "<br>");  
+		      
+		    document.write("Person2=>name: " + person2.getName() + ", Person2=>age: " + person2.getAge() + "<br>");  
+		     /*************************PROTOTYPE部分开可以是************************/  
+			Person.prototype = new Object({  
+			    getName: function(){  
+			        return this.name;  
+			    },  
+			    getAge: function(){  
+			        return this.age;  
+			    }  
+			}); 
+		</script>  
+	</body>  
+  
+</html>  

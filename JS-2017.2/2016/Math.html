@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+//			var arr = new Array(); //实例化
+//			var arr1 = [1,2,3];  //直接量
+//			var math1 = new Math();//报错，不能实例化
+			console.log( Math.abs(-8) );//绝对值
+			console.log( Math.round(2.53) );//四舍五入
+			console.log( Math.floor(1.93) );//向下取整
+			console.log( Math.ceil(0.03) );//向上取整
+			console.log( Math.random() );//0-1 不包含1的随机数
+			console.log( Math.round( Math.random()*80 +20 )  );//20-100的随机数
+			var oDiv = document.getElementById("div1");
+			abc();
+			var i=0;
+			function abc(){
+				
+				i++;
+//				oDiv.innerHTML = i;
+				document.write(i);
+				
+			}
+			setInterval(abc,1000);
+		</script>
+	</body>
+</html>

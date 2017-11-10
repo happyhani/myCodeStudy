@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str=['hello','node','element','node','hello','blue','red'];
+			var str1=[];
+		    function first(args){
+		        for(i=0;i<args.length;i++){
+		            if(str1.indexOf(args[i])<0){
+		                str1.push(args[i])
+		            }
+		        }
+		        return str1;
+		    }
+   			first(str);
+    		console.log(str1)
+		</script>
+		
+	</body>
+</html>

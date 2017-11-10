@@ -1,0 +1,3 @@
+chrome://net-internals/#dns
+
+本地host文件在-> c盘 windows System32 drivers etc hosts

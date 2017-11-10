@@ -1,0 +1,103 @@
+*{
+	list-style: none;
+	text-decoration: none ;
+	margin: 0;
+	padding: 0;
+}
+#body{
+	margin: 0 auto;
+	width: 1188px;
+}
+.head{|
+	overflow: hidden;
+}
+.logo{
+	float: left;
+	margin-top: 10px;
+}
+.nav{
+	float: left;
+	margin-left: 170px;
+}
+.nav li{
+	display: block;
+	float: left;
+	padding-left: 40px;
+	margin-top: 30px;
+}
+.search{
+	float: right;
+	margin-top: 15px;
+	font-size: 10px;
+}
+.ad{
+	margin-top: 20px;
+}
+.radio{
+	padding-top: 20px;
+}
+.p2{
+	line-height: 50px;
+	padding: 5px;
+}
+.color{
+	color:red;
+}
+hr{
+	width: 70%;
+	margin-left: 5px;
+}
+.line_first{
+	float: left;
+	overflow: hidden;
+}
+.p1{
+	font-size: 20px;
+	text-align: center;
+	color:red;
+}
+.yema{
+	margin-top: 30px;
+	clear: both;
+	height: 30px;
+	text-align: center;
+	background: #CCCCCC;
+}
+.a1{
+	border: 1px solid black;
+	line-height: 30px;
+	padding: 5px;
+}
+.top{
+	position: relative;
+	top:10px;
+	left:205px;
+	overflow: hidden;
+}
+.a2 li{
+	float: left;
+	padding: 30px;
+}
+.a2 img{
+	vertical-align: middle;
+}
+.left{
+	clear: both;
+}
+.f1{
+	float: left;
+	margin-left:90px;
+	margin-top: 30px;
+}
+.li{
+	font-weight: 900;
+	font-size: larger;
+}
+.erweima{
+	float: right;
+}
+.dibu{
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+

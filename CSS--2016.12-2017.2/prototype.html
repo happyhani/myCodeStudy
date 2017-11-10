@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person (){
+				
+			}
+			Person.prototype.name = "haha";
+			Person.prototype.sayName = function () {
+				alert(this.name);
+			}
+			var p1 = new Person();
+			console.log(p1.hasOwnProperty('name'));//false 判断是自身属性还是原型属性
+			console.log(Person.prototype.isPrototypeOf(p1));//true
+			console.log(Object.getPrototypeOf(p1).name);//true
+			console.log('name' in p1);//true 不管原型还是实例中都是true
+			//for-in中会屏蔽原型中不可枚举的属性
+		var keys = Object.keys(Person.prototype);//接受一个对象作为参数，返回一个包含所有可枚举属性的字符串数组。
+		console.log(keys);
+		console.log(Object.getOwnPropertyNames(Person.prototype));//包含了不可枚举属性
+		
+//		实例中的指针仅指向原型,而不指向构造函数
+		console.log(Array.prototype);
+		原型的最大问题是由其共享的本质所导致的.
+		解决方法:组合构造函数和原型,不想一样的放在构造函数中.就是实例属性在构造函数中,共享的在原型中.
+//		动态原型模式
+//如果在已经建立了实例的情况下重写原型,那么就会切断现有实例与新原型之间的联系.
+			function Person (){
+				this.name="haha";
+				if (typeof this.sayName !="function") {//不存在该方法才会添加到原型中。
+					Person.prototype.sayName = function(){
+						alert(this.name);
+					};
+				}
+			}
+			继承:只有实现继承,通过原型链实现.利用原型让一个引用类型继承另一个引用类型的属性和方法.
+			每个构造函数都有一个原型对象,原型对象都包含一个指向构造函数的指针,而实例都包含一个指向原型对象的内部指针.
+		构造<原型<实例
+		原型=另一个实例>另一个原型>另一个构造
+//		寄生组合式继承   最常见
+		</script>
+	</body>
+</html>

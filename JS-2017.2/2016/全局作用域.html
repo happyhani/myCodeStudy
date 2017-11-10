@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			作用域
+//			域:区域 范围
+			var str = "123";  //全局变量  作用域全局  window
+//			全局作用域，一经定义，在代码中任何地方都能访问
+		
+//			console.log(str);
+			function abc(){  //全局函数
+				alert('abc');
+			}
+//			abc();  //全局访问
+//			(function(){
+//				//局部作用域
+//				abc();  //局部作用域下访问全局函数
+//				
+//			})();
+			//匿名函数自调
+			//(function(){})();
+			function abcd(){
+				abc();   //才会执行
+			}
+			abcd();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

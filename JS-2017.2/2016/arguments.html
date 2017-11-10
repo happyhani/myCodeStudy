@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//arguments 代表实参的集合,不是数组.当不知道需要传多少参数时使用
+//			alert(fn1(1,2,3,'-'));
+//			function fn1 () {
+//				var n =0;
+//				var jisuan = arguments[arguments.length-1];
+//				if (jisuan=='+') {
+//					for (var i=0;i<arguments.length-1;i++) {
+//						n+=arguments[i];
+//					}	
+//				}else if(jisuan=='-'){
+//					for (var i=0;i<arguments.length-1;i++) {
+//						n-=arguments[i];
+//					}
+//				}
+//				return n;
+//			}
+
+			try{
+				alertt('hehe');
+			}catch(e){
+				var txt = e.message+"\n";
+				txt +=e.name;
+				alert(txt);
+			}finally{
+				alert('hehe');
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

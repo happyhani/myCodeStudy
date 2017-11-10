@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <p>12</p>
+	  <p>12</p>
+	  <p>12234</p>
+	  <script>
+	    var str = 'fcjdhfiifr';
+	    
+	    // 原生 选取元素 doms是数组，doms[0]是节点元素
+	    function $(selector) {
+        var doms = document.querySelectorAll(selector);
+        return doms.length > 1 ? doms : doms[0];
+      }
+	    $('p');
+	    
+	    console.log($('p'));
+	  </script>
+	</body>
+</html>

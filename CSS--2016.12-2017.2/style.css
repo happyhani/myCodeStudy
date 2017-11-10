@@ -1,0 +1,24 @@
+.header {
+	width: 1200px;
+	height: 80px;
+	background-color: cornsilk;
+	margin: 0 auto;
+}
+.logo {
+	width: 200px;
+	height: 80px;
+	background-color: blue;
+	float: left;
+}
+.nav {
+	width: 800px;
+	height: 80px;
+	background-color: gold;
+	float: left;
+}
+.content {
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: #6495ED;
+}

@@ -1,0 +1,31 @@
+插件：当jQ中没有我们想用的方法，但是又不能将需要的方法写到jQ库中，以防混乱。
+比如jQ中没有拖拽方法，可以自己写到插件中。既能保证jQ库的完整，又能使用自己写的新方法。
+$.extend : 扩展工具方法下的插件形式  $.xxx() $.yyy()
+$.fn.extend  :  扩展到JQ对象下的插件形式  $().xxx()  $().yyy()
+$.extend({}) 			$.a() $.b()
+$.fn.extend({})			$().a() $().b()
+例如：$.extend({
+		aaa：function(){},
+		bbb：function(){},
+		ccc：function(){},
+}) ;
+$.fn.extend({
+		aaa：function(){},
+		bbb：function(){},
+		ccc：function(){},
+}) ;
+类数组对象:
+       属性 - length属性(数组的长度|元素的个数)
+       方法
+         get(index)方法 - 根据index返回对应的DOM对象
+         eq(index)方法 - 根据index返回对应的内容
+         obj.index()方法 - 根据obj返回对应的索引值
+       隐式迭代 - 显式迭代
+         隐式迭代 - 1)要遍历谁2)得到遍历后的结果
+           $().each() - jQuery对象方法
+           $.each()   - jQuery全局函数      
+           for  in
+         显式迭代 - 1)要遍历谁2)如何遍历的3)遍历的结果
+	   for
+
+	

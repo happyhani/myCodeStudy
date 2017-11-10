@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//实现继承
+
+			function Animal(name){      
+				this.name = name;      
+				this.showName = function(){      
+				    alert(this.name);      
+				}      
+			}      
+	    
+			function Cat(name){    
+			    Animal.call(this, name);    
+			}      
+	    
+			var cat = new Cat("Black Cat");     
+			cat.showName(); 
+//			Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么 Cat中不就有Animal的所有属性和方法了吗，
+//			Cat对象就能够直接调用Animal的方法以及属性了.
+		
+		</script>
+
+	</body>
+</html>

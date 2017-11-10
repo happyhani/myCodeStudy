@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(function () {
+				$("ul li").first().css("background-color","red");
+				$("ul li").last().css("background-color","red");
+				$("li").eq(2).css("background-color","cadetblue");
+				$("li").eq(2).css("background-color","cadetblue");
+				$("li").filter(".li4").css("font-size","4em");
+				$("li").not(".li4").css("color","#FFFF00");
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li class="li4">4</li>
+			<li class="li4">5</li>
+			<li>6</li>
+			
+		</ul>
+	</body>
+</html>

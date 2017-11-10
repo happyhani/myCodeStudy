@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			1、对已有对象进行扩充方法和属性
+
+    var object = new Object();
+
+    object.name = "zhangsan";//每个对象需要写这些语句
+
+    object.sayName = function(name){//每个对象需要写这些语句
+
+        this.name = name;
+
+    };
+
+    object.sayName("lisi");
+
+    alert(object.name);
+
+    
+
+2、工厂方式创建对象
+
+    function createObject() {
+
+        var object = new Object();
+
+        object.username = "zhangsan";
+
+        object.password = "123456";
+
+        object.get = function(){
+
+            alert(this.username + "," + this.password);
+
+        }
+
+        return object;
+
+    }
+
+    var object1 = createObject();
+
+    var object2 = createObject();
+
+    object1.get();
+
+    object2.get();
+
+    // 带参数的构造方法
+
+    function createObject(username, password){
+
+        var object = new Object();
+
+        object.username = username;
+
+        object.password = password;
+
+        object.get = function(){//缺点是，多少个对象则方法就有多少个
+
+            alert(this.username + ", " + this.password);
+
+        }
+
+        return object;
+
+    }
+
+    var object1 = createObject("zhangsan",123456);
+
+    object1.get();
+
+    // 最佳改进方式
+
+    function get(){//使该函数被多个对象共享
+
+        alert(this.username + ", " + this.password);
+
+    }
+
+    function createObject(username, password){//创建对象
+
+        var object = new Object();
+
+        object.username = username;
+
+        object.password = password;
+
+        object.get = get;
+
+        return object;
+
+    }
+
+    var object1 = createObject("zhangsan", "123456");
+
+    var object2 = createObject("wangwu", "654321");
+
+    object1.get();
+
+    object2.get();
+
+3、构造函数方式创建对象
+
+    function Person(){
+
+        //在执行第一行代码欠，js引擎会为我们生成一个对象
+
+        this.username = "zhangsan";
+
+        this.password = "123";
+
+        this.getInfo = function(){
+
+            alert(this.username + ", " + this.password);
+
+        }
+
+        //此处有一个隐藏的return语句，用于将之前生成对象返回。
+
+    }
+
+    var p1 = new Person();
+
+    p1.getInfo();
+
+    //带参数
+
+    function Person(username, password){
+
+        this.username = username;
+
+        this.password = password;
+
+        this.getInfo = function(){
+
+            alert(this.username + ", " + this.password);
+
+        }
+
+    }
+
+    var p1 = new Person("zhangsan","1234546");
+
+    p1.getInfo();
+
+4、原型（“prototype”）方式
+
+    function Person(){};
+
+    Person.prototype.username = "zhangsan";
+
+    Person.prototype.password = "123456";
+
+    Person.prototype.getInfo = function(){
+
+        alert(this.username + ", " + this.password);
+
+    }
+
+    var person = new Person();
+
+    var person2 = new Person();
+
+    person.username = "haha";
+
+    person.getInfo();
+
+    person2.getInfo();
+
+    //单纯使用原型方式定义对象无法在构造函数中为属性赋值，只能在对象生成后再去改变属性值
+
+    function Person(){}
+
+    Person.prototype.username = new Array();
+
+    Person.prototype.password = "123456";
+
+    Person.prototype.getInfo = function(){
+
+        alert(this.username + ", " + this.password);
+
+    }
+
+    var person = new Person();
+
+    var person2 = new Person();
+
+    person.username.push("zhangsan");
+
+    person.username.push("lisi");
+
+    person.password = "321";
+
+    person.getInfo();
+
+    person2.getInfo();
+
+    //执行结果：zhangsan lisi 321, zhangsan lisi 123456
+
+/*                  
+
+p1 ————> Person ——> username username是一个对象的引用，值会影响p1,p2
+
+                 \ /
+
+                 / \            
+
+p2 ————> Person ——> password password是一个常量
+
+*/
+
+    
+
+5、综合方式（原型+构造函数方式搭配）
+
+    function Person(){
+
+        this.username = new Array();//不被多个对象共享
+
+        this.password = "123";
+
+    }
+
+    Person.prototype.getInfo = function()//被多个对象共享
+
+    {
+
+        alert(this.username + "," + this.password);
+
+    }
+
+    var p1 = new Person();
+
+    var p2 = new Person();
+
+    p1.username.push("zhangsan");
+
+    p2.username.push("lisi");
+
+    p1.getInfo();
+
+    p2.getInfo();
+
+  
+
+5、动态原型方式
+
+    function Person(){
+
+        this.username = "zhangsan";
+
+        this.password = "123";
+
+        //通过标志量让所有的对象共享方法
+
+        if(typeof Person.flag == "undefined"){
+
+            alert("prototype");
+
+            Person.prototype.getInfo = function() {
+
+                alert(this.username + ", " + this.password);
+
+            }
+
+            Person.flag = true;
+
+        }
+
+    }
+
+    var p = new Person();
+
+    var p2 = new Person();
+
+    p.getInfo();
+
+    p2.getInfo();
+		</script>
+		
+	</body>
+</html>

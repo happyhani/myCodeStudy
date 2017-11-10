@@ -1,0 +1,60 @@
+animate() : 
+第一个参数 : {} 运动的值和属性
+第二个参数 : 时间(运动快慢的)  默认 : 400
+第三个参数 : 运动形式 只有两种运动形式 ( 默认 : swing(慢快慢) linear(匀速) )
+第四个参数 :  回调函数
+stop();   //默认 : 只会阻止当前运动
+stop(true); //阻止后续的运动
+stop(true,true); //可以立即停止到指定的目标点		
+finish();  //立即停止到所有指定的目标点
+delay(1000):链式方法写animate，它放中间，可以在前后animate间暂停1秒
+
+delegate():利用冒泡原理。事件委托有利于提高性能。减少循环操作。
+给ul委托点击事件，内部的li都有点击事件，而且再增加新的li也有点击事件。
+trigger()：调用事件更灵活，可以在任意位置，尤其是自定义事件。$('#div1').trigger('click');  //主动触发*/
+event下的属性：
+ev.data：
+ev.target：
+ev.type：
+另一大类：工具方法
+不仅可以给JQ用，也可以给原生JS用 : 叫做工具方法
+正则：new RegExp
+$.type() : 也是判断类型。可以将所有类型都获取，如null array regexp等
+$.trim('str')：去掉str前后括号
+$.inArray() : 类似于 indexOf
+alert(  $.inArray('b',arr)  );如果数组arr有b，会弹出下标，没有就弹出-1
+$.proxy()  : 改变this指向的
+$.proxy(show , document):将this指向变成document,这时他相当于show
+$.proxy(show , document)():这时他相当于show(),才能执行
+$.proxy(show , document)(3,4):传参=show(n1，n2)   $.proxy(show , document,3)(4)
+$.proxy(show , document,3,4)()之所以要有这些传参方法，是因为可以在事件执行的时候再运行函数，
+$.proxy(show , document)(3,4)是执行函数，一上来就执行，而不是点击时。
+noConflict() : 防止冲突的 var miaov = $.noConflict();miaov( function(){} )
+parseJSON( str ):严格转化成Json格式
+类数组，他是集合但不是数组：var aDiv = document.getElementsByTagName('div');  //类数组
+$.makeArray(aDiv)：将类数组转变为数组。
+$.ajax({
+	url : 'xxx.php',
+	data : 'name=hello&age=20',
+	type : 'POST',
+	success : function(data){
+		alert(1);
+	},
+	error : function(){
+		alert(2);
+	}
+})；
+$.get('xxx.php',function(){
+	
+});
+
+$.post('xxx.php',function(){
+	
+});
+
+请求Json类型的数据：$.getJSON('xxx.php?callback=?',function(data){
+	data
+});支持跨域jsonp形式
+写一个问号，他会随机给一个名字。如果写show就是在那个地址下返回show({})
+随机({});
+区分$.get() $().get()

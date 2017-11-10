@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.big{
+				width: 1200px;
+				height: 500px;
+				background-color: cornflowerblue;
+				margin: 0 auto;
+			}
+			.leftTop {
+				width: 60%;
+				height: 50%;
+				background-color: black;
+				/*float: left;*/
+			}
+			.leftBottom {
+				width: 60%;
+				height: 50%;
+				background-color: red;
+				/*float: left;*/
+			}
+			.right {
+				width: 40%;
+				height: 100%;
+				background-color: yellow;
+				float: right;
+			}
+			#d1 {
+				background-color: cornflowerblue;
+			}
+			img {
+				
+				vertical-align: middle;
+				float: left;
+			}  
+			ul {
+				overflow: hidden;
+				position: relative; 
+			}
+			li {
+				width: 300px;
+				height: 300px;
+				float: left;
+				position: absolute; /*absolute之后高度又没有了*/
+				top: 100px;
+				left: 100px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="big">
+			<div class="leftTop"></div>
+			<div class="right"></div>
+			<div class="leftBottom">
+			</div>
+	</body>
+</html>

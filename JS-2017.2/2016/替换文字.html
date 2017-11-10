@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="text" />
+		<input type="button" value="替换"/>
+		<p id ='p'>　在西方，奶酪绝对是全民食物，无论男女老少，很多都是“没奶酪会死星人”。两位世界知名大佬都曾对它发表过经典言论，丘吉尔在二战时说，一个为世界提供300种以上奶酪的国家是不应该灭亡的。而戴高乐总统的看法则是：“要统治一个拥有600种奶酪的国家，是很困难的。”</p>
+		
+		<script type="text/javascript">
+			var aInp = document.getElementsByTagName("input");
+			var oP = document.getElementById("p");
+			aInp[2].onclick = function(){
+				var str = aInp[0].value;
+				var newStr = aInp[1].value;
+				if (!str) {
+					return;
+				}else{
+					oP.innerHTML=oP.innerHTML.split(str).join('<span>'+newStr+'</span>');
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0
+			}
+		
+			.box {
+				position: relative;
+				width: 480px;
+				height: 320px;
+			}
+			
+			#first {
+				display: inline;
+			}
+			
+			#btn {
+				position: absolute;
+				top: 260px;
+				left: 320px;
+				z-index: 999;
+			}
+			span {
+				background: #0ff;
+				display: block;
+				float: left;
+				width: 20px;
+				height: 18px;
+				line-height: 18px;
+				text-align: center;
+				margin-left: 10px;
+			}
+			
+			img {
+				display: none;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var timer = setInterval(fn1,1000);
+				var i = 1;
+				$("span").eq(0).css("background","red");
+				function fn1(){
+					$("img").eq(i).fadeIn().siblings().fadeOut();
+					$("span").eq(i).css("background","red").siblings().css("background","#0ff");
+					i++;
+					i%=4;
+					
+				}
+				
+				$("span").click(function(){
+					var n = $(this).index()-0;
+					$("img").eq(n).fadeIn().siblings().fadeOut();
+					$("span").eq(n).css("background","red").siblings().css("background","#0ff");
+					i=n;
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="btn">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+		</div>
+	
+		<div class="box">
+			<img id="first" src="img/1.jpg" />
+			<img src="img/2.jpg" />
+			<img src="img/3.jpg" />
+			<img src="img/4.jpg" />
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+</head>
+<body>
+	<div id="container">
+	    <!-- This element's contents will be replaced with your component. -->
+	</div>
+	 <script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+	  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+	
+
+	<script type="text/jsx">
+		var Hello = React.createClass({
+  render: function() {
+  	getInitialState:function(){
+    	alert(init);
+      return {
+      	opacity:1.0,
+        fontSize:14px
+      }
+    }
+    return <div style={{opacity:this.state.opcity,fontSize:this.state.fontSize}}>Hello {this.props.name}</div>;
+    componentWillMount:function(){
+    	alert(will);
+    }
+    cmponentDidMount: function(){
+     alert(did);
+    }
+    	var _self = this;
+    window.setTimeout(function(){
+    	_self.setState({
+      	opacity:0.5,
+        fonSize:44px
+      })
+    },1000)
+  }
+});
+
+ReactDOM.render(
+  <Hello name="World" />,
+  document.getElementById('container')
+);
+	</script>
+</body>
+</html>
+

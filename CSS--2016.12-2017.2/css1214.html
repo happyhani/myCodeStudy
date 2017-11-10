@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {} /*通用选择器*/
+			p { /*标签选择器*/
+				/*color: red;*/	
+			}
+			.p1 { /*类名选择器*/
+				color: #ccc;
+				border: 1px solid black;
+			}
+			#p1 { /*id选择器*/
+				color: rgb(0,0,0);
+			}
+			h1,.p1,#p1 { /*分组选择器*/
+				color: green;
+			}
+			#p1 span { /*后代选择器*/
+				color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<p>wswqewdefe</p>
+		<p class="p1">wswqewdefe</p>
+		<p id="p1">wswqewdefe
+			<span>span1</span>
+			<span>p1 
+				<span>span2</span>
+			</span>
+			<p>p2</p>
+			
+		</p>
+		<h1>标题一</h1>
+		<h2>标题一</h2>
+		<span>span</span>
+		<p><div>123</div></p>
+	</body>
+</html>
