@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	问：  1、创建对象的方式？为考察原型链、面向对象打基础
+	  2、原型、构造函数、实例、原型链 是什么？
+	  3、instanceof的原理
+	  4、new运算符
+	
+	<script> 
+	  答：  1、proto.html
+	  字面量:var o1 = {name:'o1'}; // 原型链指向object
+	        var o11 = new Object({name: 'oo1'});
+	      显示的构造函数: var M = function () { this.name='o2' }
+	            var o2 = new M();
+	        var P = {name:'o3'};
+	        var o3 = Object.create(P);
+	</script>
+	</body>
+</html>
