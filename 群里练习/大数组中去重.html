@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  有一个大数组，var a = ['1','2','3',...];a的长度是100，内容填充随机整数的字符串，请先构造此数组a，然后设计一个算法将其内容去重
+	  <script>
+	    var a = [];
+	    for (var i = 0;i<100;i++) {
+	      var item =  Math.floor(Math.random()*30);
+	    	a.push(item.toString());
+	    }
+	    console.log(a);
+	    function del (a) {
+	      
+//	      var newArr = [];
+//	    	for (var i = 0;i<100;i++) {
+//	    		if (newArr.indexOf(a[i])==-1) {
+//	    			newArr.push(a[i]);
+//	    		}
+//	    	}
+//	    	return newArr;
+
+        var arr = [];
+        var json = {};
+        for (var i = 0;i<100;i++) {
+          if (!json[a[i]]) {
+            arr.push(a[i]);
+            json[a[i]]=1;
+          }
+        }
+        return arr;
+        
+	    }
+	    del(a);
+	    console.log(del(a));
+	  </script>
+	</body>
+</html>
