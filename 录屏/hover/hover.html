@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cssHover</title>
+		<style>
+		  .demo, .img, .mask, .border {  /* 父级元素、背景图、蒙层、边框   设置宽高300像素,圆形*/
+		    width: 300px;
+		    height: 300px;
+		    border-radius: 50%;
+		  }
+		  .demo {                        /*父级元素设置  相对定位,页面居中*/
+		    position: relative;
+		    margin: 50px auto;
+		  }
+		  .border {
+		    border: 10px solid ;
+		  }
+		</style>
+	</head>
+	<body>
+	  <div class="demo">           <!--父级容器-->
+	    
+	    <div class="img"></div>    <!--背景图-->
+	    <div class="mask"></div>   <!--蒙层-->
+	    <div class="border"></div> <!--边框-->
+	    
+	  </div>
+	</body>
+</html>
+<script>
+  function express(){
+    return {
+      
+        abs: function(){
+          console.log(123);
+        }
+      
+    };
+  }
+    var app = express(); 
+    app.abs();
+</script>

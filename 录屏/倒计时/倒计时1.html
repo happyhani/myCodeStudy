@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <div id="date"></div>
+	  <script>
+	    function countDown (year,month,day,divTime) {
+	      var now = new Date();
+	      var end = new Date(year,month-1,day);
+	      var leftTime = end.getTime()-now.getTime(); // 剩余毫秒
+	      var seconds = parseInt(leftTime/1000);
+	      
+	      var d1 = Math.floor(seconds/86400);
+	      var h1 = Math.floor(seconds%86400/3600);
+	      var m1 = Math.floor(seconds%86400%3600/60);
+	      var s1 = Math.floor(seconds%60);
+	      
+        var oDate = document.getElementById(divTime);
+	      oDate.innerHTML = '距'+year+'年'+month+'月'+day+'日还有：'+d1+'天'+h1+'小时'+m1+'分'+s1+'秒';
+	    }  
+	    countDown(2018,1,1,"date");
+	    
+	    setInterval(function () {
+	    	countDown(2018,1,1,"date");
+	    },1000);
+	    
+	    
+	    
+	    
+	    
+	    //	      var yy = newD.getFullYear();
+	    //	      var MM = newD.getMonth()+1;
+	    //	      var dd = newD.getDate();
+	    //	      var hh = newD.getHours();
+	    //        var mm = newD.getMinutes();
+	    //	      var ss = newD.getSeconds();
+	  </script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>倒计时 </title>
+    <style>
+      #myTime {
+        margin-top: 100px;                            /*外边距 距上100px*/
+        text-align: center;                           /*文字居中*/
+        font-family: "bodoni mt black";               /*字体*/
+        font-size: 70px;                              /*字体大小*/
+        color: #E07514;                               /*字体颜色 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myTime">125653</div>                          <!--所要显示的时间 -->              
+    <script>
+      // 写入js
+      function countDown (year, month, day, boxTime) {
+      	var now = new Date(),
+      	    end = new Date(year, month-1, day),
+      	    leftTime = end.getTime() - now.getTime(), // 毫秒数
+      	    seconds = parseInt(leftTime/1000),       //秒数
+      	    d1 = Math.floor(seconds/84300),
+      	    m1 = seconds%
+      	
+      }
+    </script>
+  </body>
+</html>

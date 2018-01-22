@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>倒计时 </title>
+		<style>
+		  #myTime {
+		    margin-top: 100px;                            /*外边距 距上100px*/
+		    text-align: center;                           /*文字居中*/
+		    font-family: "bodoni mt black";               /*字体*/
+		    font-size: 70px;                              /*字体大小*/
+		    color: #E07514;                               /*字体颜色 */
+		  }
+		</style>
+	</head>
+	<body>
+	  <div id="myTime"></div>                          <!--所要显示的时间 -->              
+	  <script>
+	    // 写入js
+	    function countDown (year, month, day, boxTime) {
+	    	var now = new Date(),
+	    	    end = new Date(year, month-1, day),
+	    	    leftTime = end.getTime() - now.getTime(),
+	    	    seconds = parseInt(leftTime/1000),
+	    	    d1 = Math.floor(seconds/86400),
+	    	    h1 = Math.floor(seconds%86400/3600),
+	    	    m1 = Math.floor(seconds%86400%3600/60),
+	    	    s1 = Math.floor(seconds%60);
+	    	    
+	    	var boxTime = document.getElementById(boxTime);
+	    	boxTime.innerHTML = '距'+year+'年'+month+'月'+day+'日还有：'+ d1+'天'+h1+'小时'+m1+'分'+s1+'秒';
+	    
+	    }
+	    countDown(2018, 1, 1, 'myTime');
+	    setInterval(function () {
+	      countDown(2018, 1, 1, 'myTime');
+	    },1000);
+	  </script>
+	</body>
+</html>
+<!--大家好，这里是翡翠微课堂。我是 Amy。
+小伙伴们，2018年很快就要到了，你们知道还有多久吗？还记着上学时，每次遇到大型考试，老师就会在黑板上写一个倒计时--距某某考试还有多少天。
+那么今天呢，我们就用代码实现一个会实时更新的倒计时。先看效果。每过1秒，所剩时间就会减少1秒,一直到最后结束的时间。
+通过这个效果，我们会学到以下知识点：
+日期对象的使用
+parseInt 方法处理数字
+Math.floor 实现数字向下取整
+使用运算符%，获得数字的余数
+定时器实现每秒执行一次任务
+
+打开一个HTML文档，这里已经准备好了标签和样式，div中盛放所要显示的时间。样式中设置字体大小颜色，居中显示等。
+打开浏览器可以看到现在是空白页面在，div中随便写几个数字，保存刷新，查看效果。接下来我们要做的时间就会这样显示。
+
+接下来在script标签中写入js脚本。我们分析一下要怎么实现：
+第一步：获取当前时间和最终结束的时间
+第二步：计算上一步的两个时间差，这里是多少秒
+第三步：将秒数换算出具体的有多少天多少小时等
+第四步：添加定时器，让时间实时改变
+第五步：将计算的数据显示到页面
+
+今天的课程就到这里，想了解更多内容，请扫描二维码，关注翡翠教育。大家下次课再见！-->

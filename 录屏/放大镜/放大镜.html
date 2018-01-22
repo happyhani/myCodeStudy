@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #demo {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 50px;
+        border: 1px solid #ccc;
+      }
+      #small-box {
+        position: relative;
+        width: 300px;
+        height: 400px;
+      }
+      #mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      #float-box {
+        position: absolute;
+        z-index: 2;
+        display: none;
+        width: 120px;
+        height: 160px;
+        background-color: #ffffcc;
+        opacity: 0.5;
+      }
+      #big-box {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 360px;
+        width: 300px;
+        height: 400px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+      }
+      #big-box>img {
+        position: absolute;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="demo">
+      <div id="small-box">
+        <div id="mark"></div>
+        <div id="float-box"></div>
+        <img src="small.jpg"/>
+      </div>
+      <div id="big-box">
+        <img src="big.jpg"/>
+      </div>
+    </div>
+  </body>
+  <script>
+    var oDemo = document.getElementById("demo");
+    var smallBox = document.getElementById("small-box");
+    var mark = document.getElementById("mark");
+    var floatBox = document.getElementById("float-box");
+    var bigBox = document.getElementById("big-box");
+    var bigImg = bigBox.getElementsByTagName("img")[0];
+    
+    smallBox.onmouseover = function (ev) {
+      floatBox.style.display = 'block';
+      bigBox.style.display = 'block';
+      this.style.cursor = 'move';
+    }
+    smallBox.onmouseout = function (ev) {
+      floatBox.style.display = 'none';
+      bigBox.style.display = 'none';
+    }
+    smallBox.onmousemove = function (ev) {
+      var ev = ev || window.event;
+      
+      var left = ev.clientX - oDemo.offsetLeft - smallBox.offsetLeft - floatBox.offsetWidth / 2 ;
+      var top = ev.clientY - oDemo.offsetTop - smallBox.offsetTop - floatBox.offsetHeight / 2 ;
+      
+      if (left<0) {
+        left = 0;
+      }else if (left>(smallBox.offsetWidth - floatBox.offsetWidth)) {
+        left = smallBox.offsetWidth - floatBox.offsetWidth;
+      }
+      if (top<0) {
+        top = 0;
+      }else if (top>(smallBox.offsetHeight - floatBox.offsetHeight)) {
+        top = smallBox.offsetHeight - floatBox.offsetHeight; // 244 应该是240
+      }
+      
+      floatBox.style.left = left +'px';
+      floatBox.style.top = top + 'px';
+      
+      var x = left/smallBox.offsetWidth*bigImg.offsetWidth;
+      var y = top/smallBox.offsetHeight*bigImg.offsetHeight;
+      
+      
+      bigImg.style.left = -x+'px';
+      bigImg.style.top = -y+'px';
+     
+     
+     
+//    if (parseInt(floatBox.style.top) + floatBox.offsetHeight > smallBox.offsetHeight) {
+//      floatBox.style.top = smallBox.offsetHeight-floatBox.offsetHeight+'px';
+//    }
+//    if (parseInt(floatBox.style.left) + floatBox.offsetWidth > smallBox.offsetWidth) {
+//      floatBox.style.left = smallBox.offsetWidth-floatBox.offsetWidth+'px';
+//    }
+    
+    
+    }
+
+    
+    
+  </script>
+  
+</html>
