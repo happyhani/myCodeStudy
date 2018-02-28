@@ -34,4 +34,4 @@ web前端组左佳怡工作日报：
 web前端组左佳怡工作日报：
 1、任务：DT-754(进行中)
 2、链接：http://10.10.10.10:1111/secure/RapidBoard.jspa?rapidView=42&view=detail&selectedIssue=DT-754
-3、备课：UI课程jq部分
+3、备课：UI课程代码部分
